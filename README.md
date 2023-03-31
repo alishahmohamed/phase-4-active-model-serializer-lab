@@ -12,10 +12,10 @@ For this lab, we're going to return to our Blog application and update it to use
 
 To set up the app, run:
 
-```console
-$ bundle install
-$ rails db:migrate db:seed
-$ rails s
+```sh
+bundle install
+rails db:migrate db:seed
+rails s
 ```
 
 Our app includes four resources: `Author`, `Profile`, `Post`, and `Tag`, as well
@@ -32,22 +32,20 @@ passes the tests.
 
 Set up a serializer for `Author` that returns the following JSON:
 
-1. The author's `name`
-2. The author's `profile`, including only the `username`, `email`, `bio` and
+1. The author's name
+2. The author's profile, including only the `username`, `email`, `bio` and
    `avatar_url`
 3. A list of the author's posts, including:
 
-- the `title`
-- the first 40 characters of the post's content as `short_content`, with a
-  trailing ellipsis (`...`) at the end
-- a list of the associated `tags`
+- the title
+- the first 40 characters of the content
+- a list of the associated tags
 
-**Note**: You will need to make serializers for the `Profile` and `Post` models
-to get this working.
+**Note**: You will need to make serializers for the `Profile` and `Post` models to get this working.
 
 ### Posts
 
-Set up a serializer for the `Post` model that displays the following:
+Set up a serializer for `Post` that displays the following:
 
 1. The post's `title` and `content`
 2. The name of the author
